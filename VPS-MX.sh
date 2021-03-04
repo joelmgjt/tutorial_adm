@@ -177,14 +177,14 @@ MIP2=$(wget -qO- ipv4.icanhazip.com)
 [[ "$MIP" != "$MIP2" ]] && IP="$MIP2" || IP="$MIP"
 }  
 function_verify () {
-  permited=$(curl -sSL "https://raw.githubusercontent.com/VPS-MX/VPS-MX-8.0/master/Control-IP")
+  permited=$(curl -sSL "https://raw.githubusercontent.com/rudi9999/tutorial_adm/master/Control-IP")
   [[ $(echo $permited|grep "${IP}") = "" ]] && {
   echo -e "\n\n\n\033[1;95m======================================================\n ¡ESTA KEY NO CONCUERDA CON EL INSTALADOR!,CONATACTE A @Kalix1\n======================================================\n"
   [[ -d /etc/newadm ]] && rm -rf /etc/newadm
   exit 1
   } || {
   ### INTALAR VERCION DE SCRIPT
-  v1=$(curl -sSL "https://raw.githubusercontent.com/VPS-MX/VPS-MX-8.0/master/Vercion")
+  v1=$(curl -sSL "https://raw.githubusercontent.com/rudi9999/tutorial_adm/master/Vercion")
   echo "$v1" > /etc/versin_script
   }
 }
@@ -199,15 +199,15 @@ byinst="true"
 }
 install_fim () {
 msg -ama "               Finalizando Instalacion" && msg bar2
-[[ $(find /etc/newadm/ger-user -name nombre.log|grep -w "nombre.log"|head -1) ]] || wget -O /etc/newadm/ger-user/nombre.log https://raw.githubusercontent.com/VPS-MX/VPS-MX-8.0/master/ArchivosUtilitarios/nombre.log &>/dev/null
-[[ $(find /etc/newadm/ger-user -name IDT.log|grep -w "IDT.log"|head -1) ]] || wget -O /etc/newadm/ger-user/IDT.log https://raw.githubusercontent.com/VPS-MX/VPS-MX-8.0/master/ArchivosUtilitarios/IDT.log &>/dev/null
-[[ $(find /etc/newadm/ger-user -name tiemlim.log|grep -w "tiemlim.log"|head -1) ]] || wget -O /etc/newadm/ger-user/tiemlim.log https://raw.githubusercontent.com/VPS-MX/VPS-MX-8.0/master/ArchivosUtilitarios/tiemlim.log &>/dev/null
+[[ $(find /etc/newadm/ger-user -name nombre.log|grep -w "nombre.log"|head -1) ]] || wget -O /etc/newadm/ger-user/nombre.log https://raw.githubusercontent.com/rudi9999/tutorial_adm/master/ArchivosUtilitarios/nombre.log &>/dev/null
+[[ $(find /etc/newadm/ger-user -name IDT.log|grep -w "IDT.log"|head -1) ]] || wget -O /etc/newadm/ger-user/IDT.log https://raw.githubusercontent.com/rudi9999/tutorial_adm/master/ArchivosUtilitarios/IDT.log &>/dev/null
+[[ $(find /etc/newadm/ger-user -name tiemlim.log|grep -w "tiemlim.log"|head -1) ]] || wget -O /etc/newadm/ger-user/tiemlim.log https://raw.githubusercontent.com/rudi9999/tutorial_adm/master/ArchivosUtilitarios/tiemlim.log &>/dev/null
 
-wget -O /bin/rebootnb https://raw.githubusercontent.com/VPS-MX/VPS-MX-8.0/master/ArchivosUtilitarios/rebootnb &> /dev/null
+wget -O /bin/rebootnb https://raw.githubusercontent.com/rudi9999/tutorial_adm/master/ArchivosUtilitarios/rebootnb &> /dev/null
 chmod +x /bin/rebootnb 
-wget -O /bin/resetsshdrop https://raw.githubusercontent.com/VPS-MX/VPS-MX-8.0/master/ArchivosUtilitarios/resetsshdrop &> /dev/null
+wget -O /bin/resetsshdrop https://raw.githubusercontent.com/rudi9999/tutorial_adm/master/ArchivosUtilitarios/resetsshdrop &> /dev/null
 chmod +x /bin/resetsshdrop
-wget -O /etc/versin_script_new https://raw.githubusercontent.com/VPS-MX/VPS-MX-8.0/master/Vercion &>/dev/null
+wget -O /etc/versin_script_new https://raw.githubusercontent.com/rudi9999/tutorial_adm/master/Vercion &>/dev/null
 msg -bar2
 echo '#!/bin/sh -e' > /etc/rc.local
 sudo chmod +x /etc/rc.local
@@ -315,12 +315,12 @@ curl -s --max-time 10 -d "chat_id=$IDB2&disable_web_page_preview=1&text=$MSG" $U
 echo -e "\033[1;34mSE ENVIO MENSAJE DE PRUEBA SI NO LLEGA CONTACTE A @Kalix1 "
 }
 fun_ip
-wget -O /usr/bin/trans https://raw.githubusercontent.com/VPS-MX/VPS-MX-8.0/master/ArchivosUtilitarios/trans &> /dev/null
-wget -O /bin/Desbloqueo.sh https://raw.githubusercontent.com/VPS-MX/VPS-MX-8.0/master/ArchivosUtilitarios/Desbloqueo.sh &> /dev/null
+wget -O /usr/bin/trans https://raw.githubusercontent.com/rudi9999/tutorial_adm/master/ArchivosUtilitarios/trans &> /dev/null
+wget -O /bin/Desbloqueo.sh https://raw.githubusercontent.com/rudi9999/tutorial_adm/master/ArchivosUtilitarios/Desbloqueo.sh &> /dev/null
 chmod +x /bin/Desbloqueo.sh
-wget -O /bin/monitor.sh https://raw.githubusercontent.com/VPS-MX/VPS-MX-8.0/master/ArchivosUtilitarios/Monitor-Service/monitor.sh &> /dev/null
+wget -O /bin/monitor.sh https://raw.githubusercontent.com/rudi9999/tutorial_adm/master/ArchivosUtilitarios/Monitor-Service/monitor.sh &> /dev/null
 chmod +x /bin/monitor.sh
-wget -O /var/www/html/estilos.css https://raw.githubusercontent.com/VPS-MX/VPS-MX-8.0/master/ArchivosUtilitarios/Monitor-Service/estilos.css &> /dev/null
+wget -O /var/www/html/estilos.css https://raw.githubusercontent.com/rudi9999/tutorial_adm/master/ArchivosUtilitarios/Monitor-Service/estilos.css &> /dev/null
 msg -bar2
 msg -bar2
 msg -ama "     [ VPS - MX - SCRIPT \033[1;97m ❌ MOD By @Kalix1 ❌\033[1;33m ]"
